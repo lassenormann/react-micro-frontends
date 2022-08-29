@@ -1,0 +1,22 @@
+{
+  "name": "@schultz/react-micro-frontends",
+  "private": true,
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  },
+  "workspaces": [
+    "./packages/*",
+    "./apps/*"
+  ],
+  "scripts": {
+    "start": "npm-run-all --parallel start-app1 start-design-system start-shared-business-func",
+    "start-app1": "npm run start:live -w=./apps/app1 ",
+    "start-design-system": "npm run start:live -w=./packages/design-system",
+    "start-shared-business-func": "npm run start:live -w=./packages/shared-business-functionality",
+    "clean": "npm exec --workspaces -- npx rimraf node_modules && npx rimraf node_modules"
+  },
+  "description": "The project is a frontend monorepo divided into independent sub-packages.",
+  "version": "1.0.0",
+  "author": "",
+  "license": "Schultz"
+}

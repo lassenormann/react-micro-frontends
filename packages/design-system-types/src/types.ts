@@ -1,14 +1,14 @@
-interface ButtonProps {
+interface IButtonProps {
   children: React.ReactNode;
   onClick: () => void;
 }
-export type Button = React.FC<ButtonProps>;
+export type Button = React.FC<IButtonProps>;
 
-interface IconButtonProps {
+interface IIconButtonProps {
   children: React.ReactNode;
   onClick: () => void;
 }
-export type IconButton = React.FC<IconButtonProps>;
+export type IconButton = React.FC<IIconButtonProps>;
 
 type FlexContainerProps = {
   children: React.ReactNode;
@@ -17,12 +17,12 @@ type FlexContainerProps = {
 
 export type FlexContainer = React.FC<FlexContainerProps>;
 
-type TextFieldProps = {
+interface ITextFieldProps {
   readonly?: boolean;
   label: string;
   value: string;
   startAdornment?: React.ReactNode;
   endAdornment?: React.ReactNode;
-};
+}
 
-export type TextField = React.FC<TextFieldProps>;
+export type TextField = React.FC<ITextFieldProps>;

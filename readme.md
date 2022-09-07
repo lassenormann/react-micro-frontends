@@ -123,5 +123,5 @@ Typing support for the federated modules are provided by seperate *-types projec
 [React-url]: https://reactjs.org/
 [Webpack]: https://img.shields.io/badge/Webpack-2e70ce?style=for-the-badge&logo=webpack&
 [Webpack-url]: https://webpack.js.org/
-[MUI]: https://img.shields.io/badge/MUI-white?style=for-the-badge&logo=mui&logoColor=0072e4
+[MUI]: https://img.shields.io/badge/MUI-eeeeee?style=for-the-badge&logo=mui&logoColor=0072e4
 [MUI-url]: https://mui.com/

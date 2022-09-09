@@ -1,14 +1,10 @@
 import React from "react";
-import { Button as MuiButton } from "@mui/material";
+import { Button as MuiButton, ButtonProps } from "@mui/material";
 
-import { Button as ButtonType } from "design-system-types";
-
-const Button: ButtonType = ({ children, onClick }) => {
+export const Button: React.FC<ButtonProps> = ({ children, onClick }) => {
   return (
-    <MuiButton variant="contained" onClick={onClick}>
+    <MuiButton variant="contained" onClick={onClick} color="warning">
       {children}
     </MuiButton>
   );
 };
-
-export default Button;

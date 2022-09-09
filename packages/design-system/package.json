@@ -1,15 +1,17 @@
 {
-  "name": "design-system",
+  "name": "@packages/design-system",
   "version": "1.0.0",
+  "main": "dist/index.js",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
   "scripts": {
-    "build": "webpack --mode production",
-    "build:dev": "webpack --mode development",
-    "build:start": "cd dist && PORT=3101 npx serve",
-    "start": "webpack serve --open --mode development",
-    "start:live": "webpack serve --mode development --live-reload --hot"
+    "build": "npm-run-all --parallel build-js build-types",
+    "build-js": "babel src --out-dir dist --copy-files --source-maps inline --extensions \".ts,.tsx\" --ignore test.ts,test.tsx",
+    "build-types": "tsc --project ./ --noEmit false --emitDeclarationOnly true"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.8",
+    "@babel/cli": "^7.18.10",
+    "@babel/core": "^7.19.0",
     "@babel/plugin-transform-runtime": "^7.15.8",
     "@babel/preset-env": "^7.15.8",
     "@babel/preset-react": "^7.14.5",
@@ -29,10 +31,9 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "@mui/material": "^5.10.2",
     "@emotion/react": "^11.10.0",
     "@emotion/styled": "^11.10.0",
-    "design-system-types": "^1.0.0",
+    "@mui/material": "^5.10.2",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

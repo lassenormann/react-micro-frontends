@@ -1,8 +1,24 @@
 import React from "react";
-import { InputAdornment, TextField as MuiTextField } from "@mui/material";
-import { TextField as TextFieldType } from "design-system-types";
+import {
+  InputAdornment,
+  InputAdornmentProps,
+  TextField as MuiTextField,
+  TextFieldProps as MuiTextFieldProps,
+} from "@mui/material";
 
-const TextField: TextFieldType = ({ startAdornment, endAdornment, readonly = false, label, value }) => {
+type TextFieldProps = Pick<MuiTextFieldProps, "value" | "label"> & {
+  readonly?: boolean;
+  startAdornment?: React.ReactNode;
+  endAdornment?: React.ReactNode;
+};
+
+export const TextField: React.FC<TextFieldProps> = ({
+  startAdornment,
+  endAdornment,
+  readonly = false,
+  label,
+  value,
+}) => {
   return (
     <MuiTextField
       size="small"
@@ -10,11 +26,13 @@ const TextField: TextFieldType = ({ startAdornment, endAdornment, readonly = fal
       value={value}
       disabled={readonly}
       InputProps={{
-        startAdornment: <InputAdornment position="start">{startAdornment}</InputAdornment>,
-        endAdornment: <InputAdornment position="end">{endAdornment}</InputAdornment>,
+        startAdornment: (
+          <InputAdornment position="start">{startAdornment}</InputAdornment>
+        ),
+        endAdornment: (
+          <InputAdornment position="end">{endAdornment}</InputAdornment>
+        ),
       }}
     />
   );
 };
-
-export default TextField;

@@ -1,10 +1,6 @@
 import React from "react";
-import { IconButton as MuiButton } from "@mui/material";
+import { ButtonProps, IconButton as MuiButton } from "@mui/material";
 
-import { IconButton as IconButtonType } from "design-system-types";
-
-const IconButton: IconButtonType = ({ children, onClick }) => {
+export const IconButton: React.FC<ButtonProps> = ({ children, onClick }) => {
   return <MuiButton onClick={onClick}>{children}</MuiButton>;
 };
-
-export default IconButton;

@@ -1,12 +1,12 @@
 {
-  "name": "app1",
+  "name": "@apps/app1",
   "version": "1.0.0",
   "scripts": {
     "build": "webpack --mode production",
     "build:dev": "webpack --mode development",
     "build:start": "cd dist && PORT=3111 npx serve",
     "start": "webpack serve --open --mode development",
-    "start:live": "webpack serve --mode development --live-reload --hot"
+    "serve": "webpack serve --open --mode development --live-reload --hot"
   },
   "devDependencies": {
     "@babel/core": "^7.15.8",
@@ -29,8 +29,8 @@
     "webpack-dev-server": "^4.3.1"
   },
   "dependencies": {
-    "design-system-types": "^1.0.0",
-    "shared-business-functionality-types": "^1.0.0",
+    "@packages/design-system": "*",
+    "@packages/shared-business-functionality": "*",
     "react": "^17.0.2",
     "react-dom": "^17.0.2"
   }

@@ -40,26 +40,6 @@ module.exports = {
   },
 
   plugins: [
-    new ModuleFederationPlugin({
-      name: "app1",
-      filename: "remoteEntry.js",
-      remotes: {
-        "design-system": "design_system@http://localhost:3101/remoteEntry.js",
-        "shared-business-functionality": "shared_business_functionality@http://localhost:3110/remoteEntry.js",
-      },
-      exposes: {},
-      shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
-      },
-    }),
     new HtmlWebPackPlugin({
       template: "./src/index.html",
     }),
